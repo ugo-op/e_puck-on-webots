@@ -1,0 +1,65 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/obstacles/protos/OilBarrel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/KukaBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/samples/contests/rockin/protos/RoCKInAX01.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.45807632803186354 -0.39287493364589754 0.7973803134073328 4.4414492721163805
+  position 0.025605743656506103 1.3252796550951678 1.907584413815196
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  wallThickness 0.005
+}
+E-puck {
+  hidden position_0_0 99.07659430579493
+  hidden position_0_1 90.22986051665458
+  hidden linearVelocity_0 -5.142188668585836e-05 -4.084218278230409e-05 -2.9009189881429237e-08
+  hidden angularVelocity_0 0.0027228415919390825 -0.0034281628025839236 1.3088762623416388e-11
+  hidden rotation_1 0 -1 0 1.4543706090784563
+  hidden linearVelocity_1 -6.85629322294329e-05 -5.44565746381669e-05 1.2724576947736847e-11
+  hidden angularVelocity_1 0.0027228415807653322 -0.003428162789380811 -9.636294012324187e-11
+  hidden rotation_2 0 1 0 2.265266216140372
+  hidden linearVelocity_2 -6.856293236649717e-05 -5.4456574743907166e-05 1.2637535462292665e-11
+  hidden angularVelocity_2 0.0027228415814734633 -0.00342816278884662 1.2254302411409003e-10
+  translation 0.34161776819005646 -0.1697839180228479 -5.593977421303707e-05
+  rotation 0.0006632822967420722 0.00023135934244967077 0.9999997532646944 -2.470363644247359
+  controller "keyboard_controller"
+  version "2"
+  camera_height 46
+}
+OilBarrel {
+  translation -0.3 -0.3 0
+  height 0.08
+  radius 0.05
+}
+OilBarrel {
+  translation 0 -0.1 0
+  name "oil barrel(1)"
+  height 0.08
+  radius 0.05
+}
+KukaBox {
+  translation -0.2000541896464093 0.299997638848013 0.03613409480875992
+  rotation -3.9069296626709883e-11 -7.787002506180825e-10 -1 0.00013029141163255426
+  name "Kuka box(1)"
+  size 0.083 0.057 0.073
+}
+RoCKInAX01 {
+  translation 0.3300309862908517 0.0960085956544029 0.019960760000000004
+  rotation 8.885662943427181e-17 -1.2468779501085247e-16 0.9999999999999999 0.4193343103308752
+}
+PointLight {
+  attenuation 0 0 1
+  location -0.5 0.4 0
+}
