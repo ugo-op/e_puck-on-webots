@@ -34,21 +34,20 @@ A client application provides live streaming of the robot’s camera feed and di
 
 
 ## **Demo**
-# Step 1: Start the Client
+## Step 1: Start the Simulation
 - On a terminal, run
     ```bash
     webots
 - From the GUI, open the world file (e.g., /worlds/my_world.wbt)
     
-# Step 2: Start the Client
+## Step 2: Start the Client
 - On another terminal, run
     ```bash
     ./src/run_client.sh
 - Open the displayed URL in your browser to view Live camera feed and Real-time distance sensor values
 
 
-
-# Step 3: Control the Robot
+## Step 3: Control the Robot
 - Use the keyboard to control the robot (see instructions below)
 
 - Control Keys
