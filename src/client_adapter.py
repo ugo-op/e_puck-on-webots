@@ -1,4 +1,4 @@
-import socket, threading
+import socket
 import numpy as np
 import cv2, json
 from flask import Flask, Response
