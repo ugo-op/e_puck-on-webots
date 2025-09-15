@@ -3,11 +3,9 @@ import numpy as np
 import cv2, json
 from flask import Flask, Response
 
-
-
+# constants
 CAMERA_HEIGHT : int = 46
 CAMERA_WIDTH : int = 52
-
 
 
 class ClientAdapter:
@@ -25,25 +23,7 @@ class ClientAdapter:
         self.ps_sensor_socket.connect(self.ps_sensor_address)
         
         self.BUFFER_SIZE = CAMERA_HEIGHT*CAMERA_WIDTH*4
-        
-
-        
-    # def display_camera_output(self):
-    #     print("IAM HERE")
-    #     while True:
-    #         raw_data = self.camera_socket.recv(CAMERA_HEIGHT*CAMERA_WIDTH*4)
-    #         image_array = np.frombuffer(raw_data, dtype=np.uint8).reshape((CAMERA_HEIGHT, CAMERA_WIDTH, 4))  # BGRA
-
-    #         # Convert BGRA to BGR (drop alpha channel)
-    #         bgr_image = image_array[:, :, :3]  # Keep BGR channels only
-
-    #         # Display using OpenCV
-    #         resized_image = cv2.resize(bgr_image, (230, 260))  # or any size you want
-    #         #cv2.imshow("Webots Camera", resized_image)
-    #     #     if cv2.waitKey(1) & 0xFF == ord('q'):
-    #     #         break         
-    #     # cv2.destroyAllWindows()
-        
+             
         
     def receive_image_frame(self):
         # receving from the camera sensor server
@@ -61,25 +41,7 @@ class ClientAdapter:
             _, buffer = cv2.imencode('.jpg', resized)
             yield (b'--frame\r\n'
                 b'Content-Type: image/jpeg\r\n\r\n' + buffer.tobytes() + b'\r\n')
-     
-
-    # def read_ps_values(self):
-    #     while True:
-    #         list_data = b""
-    #         while not list_data.endswith(b"\n"):
-    #             chunk = self.ps_sensor_socket.recv(1024)
-    #             if not chunk:
-    #                 print("Sensor socket closed or no data received")
-                    
-    #             list_data += chunk
-
-    #         try:
-    #             json_str = list_data.decode("utf-8").strip()
-    #             decoded = json.loads(json_str)
-    #             print("Received list:", decoded)
-    #         except json.JSONDecodeError as e:
-    #             print("JSON decode error:", e)
-    #             print("Raw string was:", repr(json_str))
+            
 
     def receive_ps_sensor_data(self):
         # receiving from the ps sensor server
@@ -100,13 +62,14 @@ class ClientAdapter:
                 decoded = json.loads(json_str)
                 yield decoded
             except json.JSONDecodeError as e:
-                print("JSON decode error:", e)
-                print("Raw string was:", repr(json_str))
+                # print("JSON decode error:", e)
+                # print("Raw string was:", repr(json_str))
+                pass
 
 
 
 class WebMonitor(ClientAdapter):
-    # This class is in charge of the monitoring the sensor readings in the web
+    # This hosts the sensor readings in the web _ for monitoring
     def __init__(self, host="127.0.0.1", camera_port=5550, ps_sensor_port=5551):
         super().__init__(host, camera_port, ps_sensor_port)
         
