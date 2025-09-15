@@ -30,51 +30,44 @@ A client application provides live streaming of the robot’s camera feed and di
 
 ## Usage Summary  
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/your-username/e_puck-on-webots.git
-   
-    Install Webots
-    Download and install Webots
+- Clone the repository  
+
 
 ## **Demo**
-
-```bash
-# Step 1: Launch Webots
-webots
-# From the GUI, open the world file
-# (e.g., /worlds/my_world.wbt)
-
+# Step 1: Start the Client
+- On a terminal, run
+    ```bash
+    webots
+- From the GUI, open the world file (e.g., /worlds/my_world.wbt)
+    
 # Step 2: Start the Client
-./src/run_client.sh
-# This will display a URL in the terminal
-
-# Step 3: Access the Interface
-# Open the displayed URL in your browser to view:
-# - Live camera feed
-# - Real-time distance sensor values
-
-# Step 4: Control the Robot
-# Use the keyboard to control the robot (see instructions below)
+- On another terminal, run
+    ```bash
+    ./src/run_client.sh
+- Open the displayed URL in your browser to view Live camera feed and Real-time distance sensor values
 
 
-    Control Keys
 
-        Arrow Keys
+# Step 3: Control the Robot
+- Use the keyboard to control the robot (see instructions below)
 
-            ⬆️ Up → Move Forward
+- Control Keys
 
-            ⬇️ Down → Move Backward
+    - Arrow Keys
 
-            ⬅️ Left → Turn Left
+        ⬆️ Up → Move Forward
 
-            ➡️ Right → Turn Right
+        ⬇️ Down → Move Backward
 
-        Speed Adjustment
+        ⬅️ Left → Turn Left
 
-            CTRL + A → Increase speed
+        ➡️ Right → Turn Right
 
-            CTRL + D → Decrease speed
+    - Speed Adjustment
+
+        CTRL + A → Increase speed
+
+        CTRL + D → Decrease speed
 
 ## Future Work  
 A possible extension of this project is to use the keyboard controller for **manual obstacle avoidance** while simultaneously generating image frames and corresponding action policies.  
