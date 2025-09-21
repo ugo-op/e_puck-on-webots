@@ -14,6 +14,7 @@ class E_Puck_KeyBoardController(Robot):
         self.factor = 0.50 # serve as default
         self.MAX_SPEED = self.default_MAX_SPEED
         self.keyboard = self._init_keyboard()
+        self.gps = self.getDevice("gps")
         self.right_motor, self.left_motor = self._init_motors()
         self.camera = self._init_camera()
         # init servers

@@ -1,6 +1,6 @@
 # Demo file
 
-from client_adapter import WebMonitor
+from web_monitor import WebMonitor
 
 
 
